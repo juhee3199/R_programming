@@ -153,3 +153,48 @@ as.data.frame(list1)  # 목록 원소들이 데이터의 열.
 
 rbind(list1[[1]],list1[[2]]) #데이터의 행행
 
+
+
+# 5. 데이터 변형
+v=c(24,23,52,46,75,25)
+v
+f<-factor(c("A","A","B","B","c","A"))
+f
+
+groups<-split(v,f)
+groups
+
+data.frame(v,f)
+groups<-unstack(data.frame(v,f))
+groups
+
+
+library(MASS)
+head(Cars93)
+Cars93$Origin
+sp<-split(Cars93$MPG.city, Cars93$Origin)
+sp
+median(sp[[1]])
+sp[[1]]
+
+v
+nchar(v)
+length(V)
+
+# 2) 문자열, 날짜 다루기
+substr("statistics",1,4)
+
+
+Sys.Date()
+d<-as.Date("2020-08-18")
+d
+
+format(Sys.Date(),format="%m/%d/%y")
+
+p<-as.POSIXlt(d)
+p
+p$yday
+
+start<-as.Date("2020-08-01")
+end<-as.Date("2020-08-30")
+seq(from=start,to=end,by=1)
